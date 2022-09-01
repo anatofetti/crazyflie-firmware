@@ -14,8 +14,13 @@ const float I_yy = 16.0e-6; // kg.m^2
 const float I_zz = 29.0e-6; // kg.m^2
 const float l = 33.0e-3;    // m
 
-// curva do sinal PWM (y) x velociade angular w(x)
+// curva do sinal PWM (y) x velociade angular omega (x)
 const float a2 = 1.226e-7;
 const float a1 = 1.754e-14;
 
+// curva da força de sustentação Fl(y) x velocidade angular omega (x)
+const float kl = 1.59e-08;
+
+// curva do angulo de guinagem psi(y) x tempo t(x)
+const float kd = 1.489e-10;
 #endif
