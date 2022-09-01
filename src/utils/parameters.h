@@ -14,4 +14,8 @@ const float I_yy = 16.0e-6; // kg.m^2
 const float I_zz = 29.0e-6; // kg.m^2
 const float l = 33.0e-3;    // m
 
+// curva do sinal PWM (y) x velociade angular w(x)
+const float a2 = 1.226e-7;
+const float a1 = 1.754e-14;
+
 #endif
