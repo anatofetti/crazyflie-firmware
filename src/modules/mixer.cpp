@@ -1,7 +1,7 @@
 # include "mixer.h"
 
 // Class constructor
-Mixer :: Mixer () : motor_1 ( MOTOR1 ) , motor_2 ( MOTOR2 ) , motor_3 ( MOTOR3 ) , motor_4 ( MOTOR4 ), verm_dir(LED_RED_R,!false), verm_esq(LED_RED_L,!false), verde_dir(LED_GREEN_R,!false), verde_esq(LED_GREEN_L,!false), azul(LED_BLUE_L,!false)
+Mixer :: Mixer () : motor_1 ( MOTOR1 ) , motor_2 ( MOTOR2 ) , motor_3 ( MOTOR3 ) , motor_4 ( MOTOR4 ), verm_dir(LED_RED_R), verm_esq(LED_RED_L), verde_dir(LED_GREEN_R,!false), verde_esq(LED_GREEN_L,!false), azul(LED_BLUE_L,!false)
 {
     motor_1 . period (1.0/500.0) ;
     motor_2 . period (1.0/500.0) ;
@@ -52,18 +52,26 @@ float Mixer :: control_motor ( float omega )
 void Mixer :: arm()
 {
     armed = true;
-    verm_dir = false;
-    verm_esq = false;
     verde_dir = true;
     verde_esq = true;
-    wait(2);
+    verm_dir = false;
+    verm_esq = true;
+    for(float n=0;n<=5;n+=0.5)
+    {
+        verm_dir =! verm_dir;
+        verm_esq =! verm_esq;
+        wait(0.5);
+    }
+
+    verm_dir = false;
+    verm_esq = false;
 }
 
 void Mixer :: disarm()
 {
     actuate(0, 0, 0, 0);
     armed = false;
-    wait(2);
+    wait(1);
     verm_dir = true;
     verm_esq = true;
     verde_dir = false;
