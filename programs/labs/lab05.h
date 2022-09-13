@@ -55,7 +55,7 @@ int main ()
     motor_3 . period (1.0/500.0) ;
     motor_4 . period (1.0/500.0) ;
     // Actuate motor with 70% mg total thrust force (N) and zero torques (N.m)
-    actuate (0 ,0 ,0 ,-0.001) ;
+    actuate (0 ,0 ,0 ,0) ;
     wait (5) ;
     // Turn off all motors
     actuate (0 ,0 ,0 ,0) ;
