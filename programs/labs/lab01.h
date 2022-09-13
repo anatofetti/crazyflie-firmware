@@ -3,10 +3,10 @@
 
 // Define all LEDs as digital output objects
 DigitalOut verm_dir(LED_RED_R,!false);
-DigitalOut verde_dir(LED_GREEN_R, !false);
-DigitalOut azul_esq(LED_BLUE_L, !false);
 DigitalOut verm_esq(LED_RED_L, !false);
+DigitalOut verde_dir(LED_GREEN_R, !false);
 DigitalOut verde_esq(LED_GREEN_L, !false);
+DigitalOut azul_esq(LED_BLUE_L, !false);
 float i=0;
 // Define all motors as PWM objects
 PwmOut motor1(MOTOR1);
