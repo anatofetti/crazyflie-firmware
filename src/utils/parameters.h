@@ -23,4 +23,8 @@ const float kl = 1.59e-08;
 
 // curva do angulo de guinagem psi(y) x tempo t(x)
 const float kd = 1.489e-10;
+
+const float dt = 0.002;
+const float wc = 10;
+const float alpha = wc*dt/(1+wc*dt); 
 #endif
