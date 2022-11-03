@@ -24,13 +24,29 @@ const float kl = 1.59e-08;
 // curva do angulo de guinagem psi(y) x tempo t(x)
 const float kd = 1.489e-10;
 
-// ganhos do controlador de atitude
-const float kd_theta_phi = 26.67 ; 
-const float kp_theta_phi = 240.28 ;
-const float kd_psi = 26.67 ;  //mudar? 
-const float kp_psi = 240.28 ; //mudar?
-
+// Estimador de atitude (Lab 7)
 const float dt = 0.002;
-const float wc = 1;
-const float alpha = wc*dt/(1+wc*dt); 
+const float wc = 1.0;
+const float alpha = wc*dt/(1.0+wc*dt); 
+
+// Controlador de atitude (Lab 8)
+const float Ts_phi = 0.3; //segundos
+const float OS_phi = 0.005; //0.5%
+const float zeta_phi = abs(log(OS_phi))/sqrt(log(OS_phi)*log(OS_phi)+pi*pi);
+const float wn_phi = 4/zeta_phi/Ts_phi;
+const float kp_phi = wn_phi*wn_phi;
+const float kd_phi = 2*zeta_phi*wn_phi; 
+const float kp_theta = kp_phi;
+const float kd_theta = kd_phi;
+
+const float Ts_psi = 0.6; //segundos
+const float OS_psi = 0.005; //0.5%
+const float zeta_psi = abs(log(OS_psi))/sqrt(log(OS_psi)*log(OS_psi)+pi*pi);
+const float wn_psi = 4/zeta_psi/Ts_psi;
+const float kp_psi = wn_psi*wn_psi ; //mudar?
+const float kd_psi = 2*zeta_psi*wn_psi ;  //mudar? 
+
+// Lab 09
+const float dt_range = 0.05; //50ms
+
 #endif

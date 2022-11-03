@@ -39,7 +39,7 @@ int main()
             {
                 flag_range = false ;
                 ver_est.correct(att_est.phi, att_est.theta);
-                serial.printf("z [m ]:%6.2 f | w [m/s ]:%6.2 f \n", ver_est.z, ver_est.w);
+                serial.printf("z [m ]:%6.2f | w [m/s ]:%6.2f \n", ver_est.z, ver_est.w);
             }
         }
 
