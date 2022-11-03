@@ -24,6 +24,12 @@ const float kl = 1.59e-08;
 // curva do angulo de guinagem psi(y) x tempo t(x)
 const float kd = 1.489e-10;
 
+// ganhos do controlador de atitude
+const float kd_theta_phi = 26.67 ; 
+const float kp_theta_phi = 240.28 ;
+const float kd_psi = 26.67 ;  //mudar? 
+const float kp_psi = 240.28 ; //mudar?
+
 const float dt = 0.002;
 const float wc = 1;
 const float alpha = wc*dt/(1+wc*dt); 
