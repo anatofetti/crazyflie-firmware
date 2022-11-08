@@ -43,8 +43,8 @@ const float Ts_psi = 0.6; //segundos
 const float OS_psi = 0.005; //0.5%
 const float zeta_psi = abs(log(OS_psi))/sqrt(log(OS_psi)*log(OS_psi)+pi*pi);
 const float wn_psi = 4/zeta_psi/Ts_psi;
-const float kp_psi = wn_psi*wn_psi ; //mudar?
-const float kd_psi = 2*zeta_psi*wn_psi ;  //mudar? 
+const float kp_psi = wn_psi*wn_psi ;
+const float kd_psi = 2*zeta_psi*wn_psi ; 
 
 // Lab 09
 const float dt_range = 0.05; //50ms
@@ -52,5 +52,13 @@ const float wc_range = 10; //rad/s
 const float zeta_range = sqrt(2)/2;
 const float l1 = wc_range*wc_range;
 const float l2 = 2*zeta_range*wc_range;
+
+
+const float Ts_ver = 2; //segundos
+const float OS_ver = 0.005; //0.5%
+const float zeta_ver = abs(log(OS_psi))/sqrt(log(OS_psi)*log(OS_psi)+pi*pi);
+const float wn_ver = 4/zeta_psi/Ts_psi;
+const float kp_ver = wn_psi*wn_psi ;
+const float kd_ver = 2*zeta_psi*wn_psi ; 
 
 #endif
