@@ -16,7 +16,11 @@ void VerticalEstimator :: init ()
 // Predict vertical position and velocity from model
 void VerticalEstimator :: predict ( float f_t)
 {
-
+    z += w*dt;
+    if (z > 0.05)
+    {
+        w += (-g+f_t/m)*dt;
+    }
 }
 
 // Correct vertical position and velocity with measurement
@@ -26,7 +30,8 @@ void VerticalEstimator :: correct ( float phi , float theta )
     if (range.d < 2.0)
     {
         float z_m = range.d*cos(theta)*cos(phi);
-        z = z_m;
+        w += l1*dt_range*(z_m-z);
+        z += l2*dt_range*(z_m-z);
     }
 
 }

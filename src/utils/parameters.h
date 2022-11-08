@@ -48,5 +48,9 @@ const float kd_psi = 2*zeta_psi*wn_psi ;  //mudar?
 
 // Lab 09
 const float dt_range = 0.05; //50ms
+const float wc_range = 10; //rad/s
+const float zeta_range = sqrt(2)/2;
+const float l1 = wc_range*wc_range;
+const float l2 = 2*zeta_range*wc_range;
 
 #endif
