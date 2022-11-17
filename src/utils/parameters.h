@@ -68,7 +68,7 @@ const float sigma = 2*tan(gamma/2.0)/(W*dt);
 const float wc_flow = 50;
 
 //Lab 12
-const float Ts_hor = 10.0; //segundos
+const float Ts_hor = 2.0; //segundos
 const float OS_hor = 0.005; //0.5%
 const float zeta_hor = abs(log(OS_hor))/sqrt(log(OS_hor)*log(OS_hor)+pi*pi);
 const float wn_hor = 4/zeta_hor/Ts_hor;
