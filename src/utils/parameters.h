@@ -53,18 +53,26 @@ const float zeta_range = sqrt(2)/2;
 const float l1 = wc_range*wc_range;
 const float l2 = 2*zeta_range*wc_range;
 
-
+// Lab 10
 const float Ts_ver = 2.0; //segundos
 const float OS_ver = 0.005; //0.5%
-const float zeta_ver = abs(log(OS_psi))/sqrt(log(OS_psi)*log(OS_psi)+pi*pi);
-const float wn_ver = 4/zeta_psi/Ts_psi;
-const float kp_ver = wn_psi*wn_psi ;
-const float kd_ver = 2.0*zeta_psi*wn_psi ; 
+const float zeta_ver = abs(log(OS_ver))/sqrt(log(OS_ver)*log(OS_ver)+pi*pi);
+const float wn_ver = 4/zeta_ver/Ts_ver;
+const float kp_ver = wn_ver*wn_ver;
+const float kd_ver = 2.0*zeta_ver*wn_ver; 
 
-// Lab 10
+// Lab 11
 const float gamma = 42.0*(pi/180.0);
 const float W = 420.0;
 const float sigma = 2*tan(gamma/2.0)/(W*dt);
 const float wc_flow = 50;
+
+//Lab 12
+const float Ts_hor = 5.0; //segundos
+const float OS_hor = 0.005; //0.5%
+const float zeta_hor = abs(log(OS_hor))/sqrt(log(OS_hor)*log(OS_hor)+pi*pi);
+const float wn_hor = 4/zeta_hor/Ts_hor;
+const float kp_hor = wn_hor*wn_hor;
+const float kd_hor = 2.0*zeta_hor*wn_hor; 
 
 #endif
