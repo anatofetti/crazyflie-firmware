@@ -56,11 +56,11 @@ void Mixer :: arm()
     verde_esq = true;
     verm_dir = false;
     verm_esq = true;
-    for(float n=0;n<=5;n+=0.5)
+    for(float n=0;n<=3;n+=0.1)
     {
         verm_dir =! verm_dir;
         verm_esq =! verm_esq;
-        wait(0.5);
+        wait(0.1);
     }
 
     verm_dir = false;

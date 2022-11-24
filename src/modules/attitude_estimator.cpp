@@ -9,7 +9,7 @@ AttitudeEstimator :: AttitudeEstimator () : imu ( IMU_SDA , IMU_SCL )
 {
 phi = 0.0;
 theta = 0.0;
-psi = 0.0;
+psi = -0.006;
 p = 0.0;
 q = 0.0;
 r = 0.0;
@@ -26,10 +26,11 @@ void AttitudeEstimator :: init ()
     for ( int i =0; i <500; i ++)
     {
         imu.read () ;
-        p_bias += imu.gx;
+        p_bias += imu.gx/500.0;
+        q_bias += imu.gy/500.0;
+        r_bias += imu.gz/500.0;
         wait (dt);
     }
-    p_bias = p_bias/500;
     led = !led;
 }
 
@@ -49,6 +50,6 @@ void AttitudeEstimator :: estimate ()
     float theta_g = theta+(cos(phi)*q-sin(phi)*r)*dt;
     float psi_g = psi+(sin(phi)*(1/cos(theta))*q+cos(phi)*(1/cos(theta))*r)*dt;
     //Filtro complementar
-    phi = (1-alpha)*phi_g+alpha*phi_a;
-    theta = (1-alpha)*theta_g+alpha*theta_a;
+    phi = (1.0-alpha)*phi_g+alpha*phi_a;
+    theta = (1.0-alpha)*theta_g+alpha*theta_a;
 }
